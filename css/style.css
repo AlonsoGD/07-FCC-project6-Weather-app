@@ -1,19 +1,24 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 40pt;
-  background: #0B004D;
+  background: #01271D;
   color: white; }
 
 header {
   font-family: 'Rammetto One', cursive;
   font-size: 56pt;
-  margin-top: 50px;
-  padding-top: 50px;
+  margin-top: 35px;
+  padding-top: 35px;
   padding-bottom: 20px;
   text-shadow: 5px 5px 5px black; }
 
 main {
   padding-bottom: 50px; }
+
+.squareback {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
 
 .reference {
   font-size: 10pt;
@@ -23,24 +28,20 @@ main {
   display: block;
   margin: 0px 0px 0px 250px; }
 
-.temperature {
-  text-align: center; }
-
 .temp-square {
   display: block;
   background: rgba(0, 0, 0, 0.63);
   border-radius: 20px;
   border: 3px solid white;
-  position: relative;
-  margin-top: 75px;
-  margin-right: 200px;
+  margin-top: 55px;
+  margin-right: 150px;
   margin-left: 50px;
   padding: 10px 30px; }
-
-.squareback {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 10px; }
+  .temp-square .temperature {
+    text-align: center; }
+  .temp-square .weather-text {
+    font-size: 20pt;
+    border-top: 3px solid #000000; }
 
 .weather-location {
   padding-top: 50px; }
@@ -55,7 +56,7 @@ main {
     font-size: 28pt; }
 
   .temp-square {
-    padding: 10px 1px;
+    padding: 10px 20px;
     margin: 20px 100px; }
 
   .temperature {

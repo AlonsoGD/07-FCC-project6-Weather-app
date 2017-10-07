@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- jQuery -->
     <script rel="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Monsterrat font -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One" rel="stylesheet">   
     <!-- File links -->
     <script src="js/script.js"></script>
@@ -29,11 +29,15 @@
                 </div>
                 <div class="col-md-6">
                     <div class="temp-square">
-                        <div class="temperature">20º F<div class="weather-text">Windy</div></div>
+                        <div class="temperature"><span id="temp-id"></span>
+                            <div class="weather-text">
+                                <span id="weather-text-id"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row weather-location">Location, Country</div>
+            <div class="row weather-location" id="weatherLocation"></div>
         </main>
     </div>
     <div class="reference">Icons made by: <a href="https://d3stroy.deviantart.com/">d3stroy.devianart</a></div>

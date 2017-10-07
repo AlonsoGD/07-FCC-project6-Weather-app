@@ -2,13 +2,16 @@ $(document).ready(function() {
     var $location = $("#weatherLocation");
     var $tempId = $("#temp-id");
     var $weatherTextId = $("#weather-text-id");
+    var $tempSquareId = $("#temp-squareId");
     var cityIp;
     var countryIp;
     var countryIdIp;
     var weatherDescription;
-    var temperature;
+    var temperatureF;
+    var temperatureC;
     var weatherId;
     var weatherIconId;
+    var isThisCelsius = false;
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -48,7 +51,7 @@ $(document).ready(function() {
             },
             success: function(response) {
                 weatherDescription = response.weather[0].description;
-                temperature = Math.round(response.main.temp);
+                temperatureF = Math.round(response.main.temp);
                 weatherId = response.weather[0].id;
                 weatherIconId = response.weather[0].icon;
                 showWeather()
@@ -56,12 +59,27 @@ $(document).ready(function() {
         });
     }
 
+    function celsiusToFar(tF) {
+        temperatureC = Math.round((tF - 32) / 1.8);
+        $tempId.html(temperatureC + " º C");
+    };
+
     function showWeather() {
         $weatherTextId.html(capitalizeFirstLetter(weatherDescription));
-        $tempId.html(temperature + " º F");
+        $tempId.html(temperatureF + " º F");
    };
 
-   getLocationViaIp();
+   //Click event on the temperature DIV so it changes from Farenheit (original temp request) to Celsius on click
+    $tempSquareId.click(function () {
+        if (isThisCelsius === false) {
+            celsiusToFar(temperatureF);
+        } else {
+            $tempId.html(temperatureF + " º F");
+        };
+        isThisCelsius = !isThisCelsius;       
+    });
+
+    getLocationViaIp();
 });
 
 

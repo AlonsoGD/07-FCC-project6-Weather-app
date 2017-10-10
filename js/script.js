@@ -3,6 +3,7 @@ $(document).ready(function() {
     var $tempId = $("#temp-id");
     var $weatherTextId = $("#weather-text-id");
     var $tempSquareId = $("#temp-squareId");
+    var $body = $("body");
     var cityIp;
     var countryIp;
     var countryIdIp;
@@ -12,6 +13,11 @@ $(document).ready(function() {
     var weatherId;
     var weatherIconId;
     var isThisCelsius = false;
+    var backgroundColors = { 2: 'url("https://static.pexels.com/photos/99577/barn-lightning-bolt-storm-99577.jpeg")',           // ThuderStorm
+                             3: 'url("https://static.pexels.com/photos/219936/pexels-photo-219936.jpeg")',                      // Drizzle
+                             5: 'url("https://images.pexels.com/photos/119569/pexels-photo-119569.jpeg")',                      // Rain
+                             6: 'url("https://static.pexels.com/photos/163756/park-winter-russia-city-park-163756.jpeg")',      // Snow
+                             8: 'url("https://images.pexels.com/photos/279315/pexels-photo-279315.jpeg")' }                     // Clear
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -25,17 +31,21 @@ $(document).ready(function() {
             jsonpCallback: "callback",
             crossDomain: "true",
             success: function(response)  {
-                cityIp = response.city;
-                countryIp = response.country_name;
-                countryIdIp = response.country_code;
-                showLocation()
+                storeLocationData(response);
+                showLocation(cityIp, countryIp)
                 getWeather(cityIp, countryIdIp);
             }
         });
     };
 
-    function showLocation() {
-        $location.html(cityIp + ", " + countryIp);
+    function storeLocationData(data) {
+        cityIp = data.city;
+        countryIp = data.country_name;
+        countryIdIp = data.country_code;
+    }
+
+    function showLocation(city, country) {
+        $location.html(city + ", " + country);
     };
 
     function getWeather(city, countryId) {
@@ -50,26 +60,48 @@ $(document).ready(function() {
                 units: "imperial",
             },
             success: function(response) {
-                weatherDescription = response.weather[0].description;
-                temperatureF = Math.round(response.main.temp);
-                weatherId = response.weather[0].id;
-                weatherIconId = response.weather[0].icon;
-                showWeather()
+
+                storeWeatherData(response);
+                showWeather(temperatureF);
+                changeBackground(weatherId);
             }
         });
     }
 
-    function celsiusToFar(tF) {
-        temperatureC = Math.round((tF - 32) / 1.8);
+    function storeWeatherData(data) {
+        weatherDescription = data.weather[0].description;
+        temperatureF = Math.round(data.main.temp);
+        weatherId = data.weather[0].id;
+        weatherIconId = data.weather[0].icon;
+    }
+
+    function celsiusToFar(temptF) {
+        temperatureC = Math.round((temptF - 32) / 1.8);
         $tempId.html(temperatureC + " º C");
     };
 
-    function showWeather() {
+    function showWeather(tempF) {
         $weatherTextId.html(capitalizeFirstLetter(weatherDescription));
-        $tempId.html(temperatureF + " º F");
-   };
+        $tempId.html(tempF + " º F");
+    };
 
-   //Click event on the temperature DIV so it changes from Farenheit (original temp request) to Celsius on click
+    function changeBackground(wId) {
+        var weatherCode;
+        var backgroundColorsKeys
+        
+        weatherCode = wId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
+        backgroundColorsKeys = Object.keys(backgroundColors); //Gets all the keys from the Object with all the background images so we can easily loop trough them
+
+        // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
+        // we change the background property of the body to the image stored in the backgroundColors Object.
+        for (var i = 0; i < backgroundColorsKeys.length; i++) {
+            if (weatherCode === backgroundColorsKeys[i]) {
+                $body.css("background", backgroundColors[weatherCode]);
+            }
+        }
+    };
+
+   //Click event on the temperature DIV so it changes from Farenheit (original temp request) to Celsius
     $tempSquareId.click(function () {
         if (isThisCelsius === false) {
             celsiusToFar(temperatureF);
@@ -79,6 +111,7 @@ $(document).ready(function() {
         isThisCelsius = !isThisCelsius;       
     });
 
+    //function that starts the call for the location and weather
     getLocationViaIp();
 });
 

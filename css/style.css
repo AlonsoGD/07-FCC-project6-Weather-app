@@ -50,24 +50,37 @@ footer {
   margin-top: 55px;
   margin-right: 150px;
   margin-left: 50px;
-  padding: 10px 30px; }
+  padding: 10px 30px;
+  transition: all 0.3s ease; }
   .temp-square .temperature {
     text-align: center; }
   .temp-square .weather-text {
     font-size: 20pt;
     border-top: 3px solid #000000; }
 
+.temp-square:hover {
+  background: #11a0ff; }
+
 .weather-location {
   padding: 50px 20px;
   color: black; }
 
+.clickinfo {
+  margin-right: 150px;
+  margin-left: 50px;
+  padding: 10px 30px;
+  font-size: 14pt;
+  color: black; }
+
 @media (max-width: 992px) {
   body {
-    font-size: 28pt; }
+    font-size: 24pt; }
 
   header {
     margin-top: 20px;
+    margin-bottom: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 28pt; }
 
   .temp-square {
@@ -82,6 +95,10 @@ footer {
     margin: 0 auto; }
 
   .weather-location {
-    padding: 10px 20px; } }
+    padding: 10px 20px; }
+
+  .clickinfo {
+    margin-right: 10px;
+    margin-left: 10px; } }
 
 /*# sourceMappingURL=style.css.map */

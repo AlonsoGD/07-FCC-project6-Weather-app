@@ -62,6 +62,7 @@ footer {
     margin-right: 150px;
     margin-left: 50px;
     padding: 10px 30px;
+    transition:all 0.3s ease;
     
     .temperature {
         text-align: center;   
@@ -73,24 +74,35 @@ footer {
     }
 }
 
+.temp-square:hover
+{
+    background:#11a0ff;
+}
+
 .weather-location {
     padding: 50px 20px;
     color: black;
 }
 
-#weatherIcon {
-
+.clickinfo {
+    margin-right: 150px;
+    margin-left: 50px;
+    padding: 10px 30px;
+    font-size: $fontSize * 0.35;
+    color: black;
 }
 
 // Mobile layout
 @media (max-width: 992px) {
     body {
-        font-size: $fontSize * 0.70;
+        font-size: $fontSize * 0.60;
     }
 
     header {
         margin-top: 20px;
+        margin-bottom: 10px;
         padding-top: 10px;
+        padding-bottom: 10px;
         font-size: $fontSize * 0.70;
     }
 
@@ -110,5 +122,10 @@ footer {
 
     .weather-location {
         padding: 10px 20px;
+    }
+
+    .clickinfo {
+        margin-right: 10px;
+        margin-left: 10px;;
     }
 }

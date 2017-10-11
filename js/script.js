@@ -64,6 +64,7 @@ $(document).ready(function() {
                 showWeather(temperatureF);
                 changeBackground(weatherId);
                 changeWeatherIcon(weatherIconId);
+                console.log(weatherIconId);
             }
         });
     }
@@ -95,11 +96,21 @@ $(document).ready(function() {
         $weatherIcon.attr("src", iconAdress);
     }
     
+    // Function for codepenIo because I cannot store my icons in this place, so I use the icons provided by the API;
+    function remoteWeatherIcon(iconId) {
+        var inconUrl;
+        inconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
+        $weatherIcon.attr("src", inconUrl);
+        $weatherIcon.css("height", "200px");
+    }
+
     function celsiusToFar(temptF) {
         temperatureC = Math.round((temptF - 32) / 1.8);
         $tempId.html(temperatureC + " º C");
     };
 
+
+    
     //Click event on the temperature DIV so it changes from Farenheit (original temp request) to Celsius
     $tempSquareId.click(function () {
         if (isThisCelsius === false) {

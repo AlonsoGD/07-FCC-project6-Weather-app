@@ -9,6 +9,7 @@ body {
     background-attachment: fixed !important;
     background-size: cover !important;
     color: white;
+    padding-bottom: 75px;
 }
 
 header {
@@ -21,7 +22,7 @@ header {
 }
 
 main {
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 footer {
@@ -73,7 +74,7 @@ footer {
 }
 
 .weather-location {
-    padding-top: 50px;
+    padding: 50px 20px;
     color: black;
 }
 
@@ -89,13 +90,13 @@ footer {
 
     header {
         margin-top: 20px;
-        padding-top: 20px;
+        padding-top: 10px;
         font-size: $fontSize * 0.70;
     }
 
     .temp-square {
         padding: 10px 20px;
-        margin: 20px 100px;
+        margin: 10px 100px;
     }
 
     .temperature {
@@ -108,6 +109,6 @@ footer {
     }
 
     .weather-location {
-        padding-top: 10px;
+        padding: 10px 20px;
     }
 }

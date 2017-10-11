@@ -6,7 +6,8 @@ body {
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover !important;
-  color: white; }
+  color: white;
+  padding-bottom: 75px; }
 
 header {
   font-family: 'Rammetto One', cursive;
@@ -17,7 +18,7 @@ header {
   text-shadow: 5px 5px 5px black; }
 
 main {
-  padding-bottom: 50px; }
+  padding-bottom: 10px; }
 
 footer {
   padding: 10px;
@@ -57,7 +58,7 @@ footer {
     border-top: 3px solid #000000; }
 
 .weather-location {
-  padding-top: 50px;
+  padding: 50px 20px;
   color: black; }
 
 @media (max-width: 992px) {
@@ -66,12 +67,12 @@ footer {
 
   header {
     margin-top: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 28pt; }
 
   .temp-square {
     padding: 10px 20px;
-    margin: 20px 100px; }
+    margin: 10px 100px; }
 
   .temperature {
     text-align: center; }
@@ -81,6 +82,6 @@ footer {
     margin: 0 auto; }
 
   .weather-location {
-    padding-top: 10px; } }
+    padding: 10px 20px; } }
 
 /*# sourceMappingURL=style.css.map */

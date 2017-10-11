@@ -107,9 +107,7 @@ $(document).ready(function() {
         temperatureC = Math.round((temptF - 32) / 1.8);
         $tempId.html(temperatureC + " º C");
     };
-
-
-    
+ 
     //Click event on the temperature DIV so it changes from Farenheit (original temp request) to Celsius
     $tempSquareId.click(function () {
         if (isThisCelsius === false) {

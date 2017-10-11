@@ -24,6 +24,18 @@ main {
     padding-bottom: 50px;
 }
 
+footer {
+    padding: 10px;
+    background-color: #efefef;
+    font-size: 12pt;
+
+    .footerlinks {
+        padding: 10px;
+        color: black;
+        font-size: 12pt;
+    }
+}
+
 .squareback {
     background: rgba(255, 255, 255, 0.637);
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);

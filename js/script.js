@@ -1,9 +1,6 @@
 $(document).ready(function() {
-    var $location = $("#weatherLocation");
     var $tempId = $("#temp-id");
-    var $weatherTextId = $("#weather-text-id");
     var $tempSquareId = $("#temp-squareId");
-    var $body = $("body");
     var $weatherIcon = $("#weatherIcon");
     var $dataToggletTooltip = $('[data-toggle="tooltip"]')
     var weatherDescription;
@@ -32,6 +29,7 @@ $(document).ready(function() {
     };
 
     function showLocation(city, country) {
+        var $location = $("#weatherLocation");
         $location.html(city + ", " + country);
     };
 
@@ -59,11 +57,13 @@ $(document).ready(function() {
     }
 
     function showWeather(tempF) {
+        var $weatherTextId = $("#weather-text-id");
         $weatherTextId.html(capitalizeFirstLetter(weatherDescription));
         $tempId.html(tempF + " º F");
     };
     
     function changeBackground(weathId) {
+        var $body = $("body");
         var backgroundImages = { 2: 'url("https://static.pexels.com/photos/99577/barn-lightning-bolt-storm-99577.jpeg")',           // ThuderStorm Background
                                  3: 'url("https://static.pexels.com/photos/219936/pexels-photo-219936.jpeg")',                      // Drizzle Background
                                  5: 'url("https://images.pexels.com/photos/119569/pexels-photo-119569.jpeg")',                      // Rain Background

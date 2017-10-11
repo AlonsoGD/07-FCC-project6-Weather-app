@@ -108,7 +108,7 @@ footer {
 
     .temp-square {
         padding: 10px 20px;
-        margin: 10px 100px;
+        margin: 10px 50px;
     }
 
     .temperature {
@@ -127,5 +127,9 @@ footer {
     .clickinfo {
         margin-right: 10px;
         margin-left: 10px;;
+    }
+
+    #weather-text-id {
+        font-size: $fontSize * 0.4;
     }
 }

@@ -49,7 +49,7 @@ $(document).ready(function() {
         var openWeatherApi = "45a35cb6a70922039a1b0cbaf7670abb";
         $.ajax({
             method: "GET",
-            url: "http://api.openweathermap.org/data/2.5/weather",
+            url: "https://api.openweathermap.org/data/2.5/weather",
             dataType: "json",
             data: {
                 APPID: openWeatherApi,
@@ -64,7 +64,6 @@ $(document).ready(function() {
                 showWeather(temperatureF);
                 changeBackground(weatherId);
                 changeWeatherIcon(weatherIconId);
-                console.log(weatherIconId);
             }
         });
     }
@@ -99,7 +98,7 @@ $(document).ready(function() {
     // Function for codepenIo because I cannot store my icons in this place, so I use the icons provided by the API;
     function remoteWeatherIcon(iconId) {
         var inconUrl;
-        inconUrl = "http://openweathermap.org/img/w/" + iconId + ".png";
+        inconUrl = "https://openweathermap.org/img/w/" + iconId + ".png";
         $weatherIcon.attr("src", inconUrl);
         $weatherIcon.css("height", "200px");
     }

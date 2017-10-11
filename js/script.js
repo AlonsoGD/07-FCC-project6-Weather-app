@@ -5,6 +5,7 @@ $(document).ready(function() {
     var $tempSquareId = $("#temp-squareId");
     var $body = $("body");
     var $weatherIcon = $("#weatherIcon");
+    var $dataToggletTooltip = $('[data-toggle="tooltip"]')
     var cityIp;
     var countryIp;
     var countryIdIp;
@@ -118,7 +119,10 @@ $(document).ready(function() {
         isThisCelsius = !isThisCelsius;       
     });
     
+    
     //function call that starts the call for the location and weather
     getLocationViaIp();
+    //start tooltips
+    $dataToggletTooltip.tooltip();
     ;
 });

@@ -6,20 +6,9 @@ $(document).ready(function() {
     var $body = $("body");
     var $weatherIcon = $("#weatherIcon");
     var $dataToggletTooltip = $('[data-toggle="tooltip"]')
-    var cityIp;
-    var countryIp;
-    var countryIdIp;
     var weatherDescription;
     var temperatureF;
-    var temperatureC;
-    var weatherId;
-    var weatherIconId;
     var isThisCelsius = false;
-    var backgroundColors = { 2: 'url("https://static.pexels.com/photos/99577/barn-lightning-bolt-storm-99577.jpeg")',           // ThuderStorm Background
-                             3: 'url("https://static.pexels.com/photos/219936/pexels-photo-219936.jpeg")',                      // Drizzle Background
-                             5: 'url("https://images.pexels.com/photos/119569/pexels-photo-119569.jpeg")',                      // Rain Background
-                             6: 'url("https://static.pexels.com/photos/163756/park-winter-russia-city-park-163756.jpeg")',      // Snow Background
-                             8: 'url("https://images.pexels.com/photos/279315/pexels-photo-279315.jpeg")' }                     // Clear Background
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -33,9 +22,9 @@ $(document).ready(function() {
             jsonpCallback: "callback",
             crossDomain: "true",
             success: function(response)  {
-                cityIp = response.city;
-                countryIp = response.country_name;
-                countryIdIp = response.country_code;
+                var cityIp = response.city;
+                var countryIp = response.country_name;
+                var countryIdIp = response.country_code;
                 showLocation(cityIp, countryIp);
                 getWeather(cityIp, countryIdIp);
             }
@@ -60,8 +49,8 @@ $(document).ready(function() {
             success: function(response) {
                 weatherDescription = response.weather[0].description;
                 temperatureF = Math.round(response.main.temp);
-                weatherId = response.weather[0].id;
-                weatherIconId = response.weather[0].icon;
+                var weatherId = response.weather[0].id;
+                var weatherIconId = response.weather[0].icon;
                 showWeather(temperatureF);
                 changeBackground(weatherId);
                 changeWeatherIcon(weatherIconId);
@@ -75,17 +64,22 @@ $(document).ready(function() {
     };
     
     function changeBackground(weathId) {
+        var backgroundImages = { 2: 'url("https://static.pexels.com/photos/99577/barn-lightning-bolt-storm-99577.jpeg")',           // ThuderStorm Background
+                                 3: 'url("https://static.pexels.com/photos/219936/pexels-photo-219936.jpeg")',                      // Drizzle Background
+                                 5: 'url("https://images.pexels.com/photos/119569/pexels-photo-119569.jpeg")',                      // Rain Background
+                                 6: 'url("https://static.pexels.com/photos/163756/park-winter-russia-city-park-163756.jpeg")',      // Snow Background
+                                 8: 'url("https://images.pexels.com/photos/279315/pexels-photo-279315.jpeg")' }                     // Clear Background
         var weatherCode;
         var backgroundColorsKeys
         
         weatherCode = weathId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
-        backgroundColorsKeys = Object.keys(backgroundColors); //Gets all the keys from the Object with all the background images so we can easily loop trough them
+        backgroundColorsKeys = Object.keys(backgroundImages); //Gets all the keys from the Object with all the background images so we can easily loop trough them
         
         // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
-        // we change the background property of the body to the image stored in the backgroundColors Object.
+        // we change the background property of the body to the image stored in the backgroundImages Object.
         for (var i = 0; i < backgroundColorsKeys.length; i++) {
             if (weatherCode === backgroundColorsKeys[i]) {
-                $body.css("background", backgroundColors[weatherCode]);
+                $body.css("background", backgroundImages[weatherCode]);
             }
         }
     };
@@ -105,7 +99,7 @@ $(document).ready(function() {
     }
 
     function celsiusToFar(temptF) {
-        temperatureC = Math.round((temptF - 32) / 1.8);
+        var temperatureC = Math.round((temptF - 32) / 1.8);
         $tempId.html(temperatureC + " º C");
     };
  

@@ -76,24 +76,27 @@ $(document).ready(function() {
     
     function changeBackground(weathId) {
         var $body = $("body");
-        var backgroundImages = { 2: 'url("img/bkThunderStorm.jpeg")',             // ThuderStorm Background
-                                 3: 'url("img/bkDrizzle.jpeg")',                  // Drizzle Background
-                                 5: 'url("img/bkRan.jpeg")',                      // Rain Background
-                                 6: 'url("img/bkSnow.jpeg")',                     // Snow Background
-                                 8: 'url("img/bkSunny.jpeg")' }                   // Clear Background
+        var backgroundImages = { 
+            2: 'url("img/bkThunderStorm.jpeg")',             // ThuderStorm Background
+            3: 'url("img/bkDrizzle.jpeg")',                  // Drizzle Background
+            5: 'url("img/bkRan.jpeg")',                      // Rain Background
+            6: 'url("img/bkSnow.jpeg")',                     // Snow Background
+            8: 'url("img/bkCloudy.jpeg")',                   // Cloudy Background
+            800: 'url("img/bkSunny.jpeg")'                   // Clear Background
+            }                              
         var weatherCode;
         var backgroundColorsKeys
         
         weatherCode = weathId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
         backgroundColorsKeys = Object.keys(backgroundImages); //Gets all the keys from the Object with all the background images so we can easily loop trough them
-        
         // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
         // we change the background property of the body to the image stored in the backgroundImages Object.
+        
         for (var i = 0; i < backgroundColorsKeys.length; i++) {
             if (weatherCode === backgroundColorsKeys[i]) {
                 $body.css("background", backgroundImages[weatherCode]);
-            } else {
-                $body.css("background", "rgb(0, 112, 82)");
+            } else if (weathId.toString() === backgroundColorsKeys[i]) {
+                $body.css("background", backgroundImages[weathId]);
             }
         }
     };

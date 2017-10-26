@@ -30,7 +30,19 @@ $(document).ready(function() {
 
     function showLocation(city, country) {
         var $location = $("#weatherLocation");
-        $location.html(city + ", " + country);
+        switch (true) {
+            case city === null && country === null:
+                $location.html("<i>Country and city name not available</i>");
+                break;
+            case city === null:
+                $location.html("<i>City name not available</i>" + ", " + country);
+                break;
+            case country === null:
+                $location.html(city + ", " + "<i>Country name not available</i>");
+                break;
+            default:
+            $location.html(city + ", " + country);
+        }
     };
 
     function getWeather(city, countryId) {
@@ -64,11 +76,11 @@ $(document).ready(function() {
     
     function changeBackground(weathId) {
         var $body = $("body");
-        var backgroundImages = { 2: 'url("https://static.pexels.com/photos/99577/barn-lightning-bolt-storm-99577.jpeg")',           // ThuderStorm Background
-                                 3: 'url("https://static.pexels.com/photos/219936/pexels-photo-219936.jpeg")',                      // Drizzle Background
-                                 5: 'url("https://images.pexels.com/photos/119569/pexels-photo-119569.jpeg")',                      // Rain Background
-                                 6: 'url("https://static.pexels.com/photos/163756/park-winter-russia-city-park-163756.jpeg")',      // Snow Background
-                                 8: 'url("https://images.pexels.com/photos/279315/pexels-photo-279315.jpeg")' }                     // Clear Background
+        var backgroundImages = { 2: 'url("img/bkThunderStorm.jpeg")',             // ThuderStorm Background
+                                 3: 'url("img/bkDrizzle.jpeg")',                  // Drizzle Background
+                                 5: 'url("img/bkRan.jpeg")',                      // Rain Background
+                                 6: 'url("img/bkSnow.jpeg")',                     // Snow Background
+                                 8: 'url("img/bkSunny.jpeg")' }                   // Clear Background
         var weatherCode;
         var backgroundColorsKeys
         
@@ -80,6 +92,8 @@ $(document).ready(function() {
         for (var i = 0; i < backgroundColorsKeys.length; i++) {
             if (weatherCode === backgroundColorsKeys[i]) {
                 $body.css("background", backgroundImages[weatherCode]);
+            } else {
+                $body.css("background", "rgb(0, 112, 82)");
             }
         }
     };

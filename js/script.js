@@ -81,6 +81,7 @@ $(document).ready(function() {
             3: 'url("img/bkDrizzle.jpeg")',                  // Drizzle Background
             5: 'url("img/bkRan.jpeg")',                      // Rain Background
             6: 'url("img/bkSnow.jpeg")',                     // Snow Background
+            7: 'url("img/bkHazze.jpeg")',                    // Hazze Background
             8: 'url("img/bkCloudy.jpeg")',                   // Cloudy Background
             0: 'url("img/bkSunny.jpeg")'                     // Clear Background
             }                              
@@ -90,15 +91,17 @@ $(document).ready(function() {
         //Special case for the sunny weather. The API serve it with the same code as clouds, so we change the code to a new one for our function;
         if (weathId === 800) {
             weathId = 000;
-        }
-        weatherCode = weathId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
-        backgroundColorsKeys = Object.keys(backgroundImages); //Gets all the keys from the Object with all the background images so we can easily loop trough them
-        // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
-        // we change the background property of the body to the image stored in the backgroundImages Object.
-        console.log(weatherCode, weathId)
-        for (var i = 0; i < backgroundColorsKeys.length; i++) {
-            if (weatherCode === backgroundColorsKeys[i]) {
-                $body.css("background", backgroundImages[weatherCode]);
+        } else {
+            weatherCode = weathId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
+            backgroundColorsKeys = Object.keys(backgroundImages); //Gets all the keys from the Object with all the background images so we can easily loop trough them
+            
+            // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
+            // we change the background property of the body to the image stored in the backgroundImages Object.
+            console.log(weatherCode, weathId)
+            for (var i = 0; i < backgroundColorsKeys.length; i++) {
+                if (weatherCode === backgroundColorsKeys[i]) {
+                    $body.css("background", backgroundImages[weatherCode]);
+                }
             }
         }
     };

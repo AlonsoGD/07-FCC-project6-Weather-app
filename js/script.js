@@ -87,12 +87,9 @@ $(document).ready(function() {
             }                              
         var weatherCode;
         var backgroundColorsKeys
-
-        //Special case for the sunny weather. The API serve it with the same code as clouds, so we change the code to a new one for our function;
-        if (weathId === 800) {
-            weathId = 000;
-        } else {
-            weatherCode = weathId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
+        
+        function searchBackground() {
+           weatherCode = weathId.toString().slice(0, 1); //Get the weather code passed to the function and keeps the first character of the code
             backgroundColorsKeys = Object.keys(backgroundImages); //Gets all the keys from the Object with all the background images so we can easily loop trough them
             
             // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
@@ -102,7 +99,15 @@ $(document).ready(function() {
                 if (weatherCode === backgroundColorsKeys[i]) {
                     $body.css("background", backgroundImages[weatherCode]);
                 }
-            }
+            } 
+        }
+
+        //Special case for the sunny weather. The API serve it with the same code as clouds, so we change the code to a new one for our function;
+        if (weathId === 800) {
+            weathId = 000;
+            searchBackground();
+        } else {
+            searchBackground();
         }
     };
     

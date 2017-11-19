@@ -79,7 +79,7 @@ $(document).ready(function() {
         var backgroundImages = { 
             2: 'url("img/bkThunderStorm.jpeg")',             // ThuderStorm Background
             3: 'url("img/bkDrizzle.jpeg")',                  // Drizzle Background
-            5: 'url("img/bkRan.jpeg")',                      // Rain Background
+            5: 'url("img/bkRain.jpeg")',                      // Rain Background
             6: 'url("img/bkSnow.jpeg")',                     // Snow Background
             7: 'url("img/bkHazze.jpeg")',                    // Hazze Background
             8: 'url("img/bkCloudy.jpeg")',                   // Cloudy Background

@@ -15,7 +15,9 @@ $(document).ready(function() {
         $.ajax({
             type: "GET",
             url: "https://freegeoip.net/json/",
-            dataType: "json",
+            dataType: "jsonp",
+            jsonpCallback: "callback",
+            crossDomain: "true",
             success: function(response)  {
                 var cityIp = response.city;
                 var countryIp = response.country_name;

@@ -14,19 +14,19 @@ $(document).ready(function() {
     function getLocationViaIp() {
         $.ajax({
             type: "GET",
-            url: "http://freegeoip.net/json/",
-            dataType: "jsonp",
-            jsonpCallback: "callback",
+            url: "https://ipinfo.io/json",
+            dataType: "json",
+            //jsonpCallback: "callback",
             crossDomain: "true",
             success: function(response)  {
                 var cityIp = response.city;
-                var countryIp = response.country_name;
-                var countryIdIp = response.country_code;
+                var countryIp = response.region;
+                var countryIdIp = response.country;
                 showLocation(cityIp, countryIp);
                 getWeather(cityIp, countryIdIp);
             },
             error: function(response) {
-                alert("Please unblock your Ad blocker to determine your IP")
+                alert("Opps something is not working with the IP API...")
             }
         });
     };

@@ -22,7 +22,7 @@ $(document).ready(function() {
                 var cityIp = response.city;
                 var countryIp = response.region;
                 var countryIdIp = response.country;
-                showLocation(cityIp, countryIp);
+                showLocation(cityIp, countryIp, countryIdIp);
                 getWeather(cityIp, countryIdIp);
             },
             error: function(response) {
@@ -31,7 +31,7 @@ $(document).ready(function() {
         });
     };
 
-    function showLocation(city, country) {
+    function showLocation(city, country, countryID) {
         var $location = $("#weatherLocation");
         switch (true) {
             case city === null && country === null:
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 $location.html(city + ", " + "<i>Country name not available</i>");
                 break;
             default:
-            $location.html(city + ", " + country + ", " + countryIdIp);
+            $location.html(city + ", " + country + ", " + countryID);
         }
     };
 

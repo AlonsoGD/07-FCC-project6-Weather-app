@@ -14,16 +14,17 @@ $(document).ready(function() {
     function getLocationViaIp() {
         $.ajax({
             type: "GET",
-            url: "https://geoip-db.com/jsonp/",
-            dataType: "jsonp",
-            jsonpCallback: "callback",
-            crossDomain: "true",
+            url: "http://ip-api.com/json",
+            dataType: "json",
             success: function(response)  {
                 var cityIp = response.city;
-                var countryIp = response.country_name;
-                var countryIdIp = response.country_code;
+                var countryIp = response.country;
+                var countryIdIp = response.countryCode;
                 showLocation(cityIp, countryIp);
                 getWeather(cityIp, countryIdIp);
+            },
+            error: function(response) {
+                alert("Please unblock your Ad blocker to determine your IP")
             }
         });
     };

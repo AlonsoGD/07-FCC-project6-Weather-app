@@ -14,12 +14,12 @@ $(document).ready(function() {
     function getLocationViaIp() {
         $.ajax({
             type: "GET",
-            url: "http://ip-api.com/json",
+            url: "http://freegeoip.net/json/",
             dataType: "json",
             success: function(response)  {
                 var cityIp = response.city;
-                var countryIp = response.country;
-                var countryIdIp = response.countryCode;
+                var countryIp = response.country_name;
+                var countryIdIp = response.country_code;
                 showLocation(cityIp, countryIp);
                 getWeather(cityIp, countryIdIp);
             },

@@ -44,7 +44,7 @@ $(document).ready(function() {
                 $location.html(city + ", " + "<i>Country name not available</i>");
                 break;
             default:
-            $location.html(city + ", " + country);
+            $location.html(city + ", " + country + ", " + countryIdIp);
         }
     };
 
@@ -97,7 +97,6 @@ $(document).ready(function() {
             
             // This loop checks if the weatherCode passed is in the array of the keys of bagroundcolors object. When the weatherCode coincides with one of the keys stored in the array, 
             // we change the background property of the body to the image stored in the backgroundImages Object.
-            console.log(weatherCode, weathId)
             for (var i = 0; i < backgroundColorsKeys.length; i++) {
                 if (weatherCode === backgroundColorsKeys[i]) {
                     $body.css("background", backgroundImages[weatherCode]);

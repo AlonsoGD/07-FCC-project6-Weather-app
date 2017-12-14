@@ -14,7 +14,7 @@ $(document).ready(function() {
     function getLocationViaIp() {
         $.ajax({
             type: "GET",
-            url: "https://freegeoip.net/json/",
+            url: "http://freegeoip.net/json/",
             dataType: "jsonp",
             jsonpCallback: "callback",
             crossDomain: "true",

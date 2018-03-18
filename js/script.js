@@ -35,13 +35,13 @@ $(document).ready(function() {
         var $location = $("#weatherLocation");
         switch (true) {
             case city === null && country === null:
-                $location.html("<i>Country and city name not available</i>");
+                $location.html("<i>We got somre problems locating your IP, try again later</i>");
                 break;
-            case city === null:
-                $location.html("<i>City name not available</i>" + ", " + country);
+            case city === null || city === undefined || city === "":
+                $location.html("<i>We got somre problems locating your IP, try again later</i>");
                 break;
-            case country === null:
-                $location.html(city + ", " + "<i>Country name not available</i>");
+            case country === null || country === undefined || country === "":
+                $location.html("<i>We got somre problems locating your IP, try again later</i>");
                 break;
             default:
             $location.html(city + ", " + country + ", " + countryID);

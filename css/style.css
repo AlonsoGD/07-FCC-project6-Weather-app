@@ -1,107 +1,35 @@
 body {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40pt;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20pt;
   background: #007052;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
   background-size: cover !important;
-  color: white;
-  padding-bottom: 75px; }
-
-header {
-  font-family: 'Rammetto One', cursive;
-  font-size: 56pt;
-  margin-top: 35px;
-  padding-top: 35px;
-  padding-bottom: 20px;
-  text-shadow: 5px 5px 5px black; }
-
-main {
-  padding-bottom: 10px; }
+  color: black;
+  padding-bottom: 75px;
+}
 
 footer {
   padding: 10px;
-  background-color: #efefef;
-  font-size: 12pt; }
-  footer .footerlinks {
-    padding: 10px;
-    color: black;
-    font-size: 12pt; }
+  font-size: 12pt;
+}
+footer .footerlinks {
+  padding: 10px;
+  color: black;
+  font-size: 12pt;
+}
 
 .squareback {
   background: rgba(255, 255, 255, 0.637);
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 10px; }
-
-.reference {
-  font-size: 10pt;
-  margin-top: 10px; }
-
-.weather-image {
-  display: block;
-  margin: 0px 0px 0px 250px; }
-
-.temp-square {
-  display: block;
-  background: rgba(0, 0, 0, 0.63);
-  border-radius: 20px;
-  border: 3px solid white;
-  margin-top: 55px;
-  margin-right: 150px;
-  margin-left: 50px;
-  padding: 10px 30px;
-  transition: all 0.3s ease; }
-  .temp-square .temperature {
-    text-align: center; }
-  .temp-square .weather-text {
-    font-size: 20pt;
-    border-top: 3px solid #000000; }
-
-.temp-square:hover {
-  background: #11a0ff; }
-
-.weather-location {
-  padding: 50px 20px;
-  color: black; }
-
-.clickinfo {
-  margin-right: 150px;
-  margin-left: 50px;
-  padding: 10px 30px;
-  font-size: 14pt;
-  color: black; }
+  border-radius: 10px;
+}
 
 @media (max-width: 992px) {
   body {
-    font-size: 24pt; }
-
-  header {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 28pt; }
-
-  .temp-square {
-    padding: 10px 20px;
-    margin: 10px 50px; }
-
-  .temperature {
-    text-align: center; }
-
-  .weather-image {
-    display: block;
-    margin: 0 auto; }
-
-  .weather-location {
-    padding: 10px 20px; }
-
-  .clickinfo {
-    margin-right: 10px;
-    margin-left: 10px; }
-
-  #weather-text-id {
-    font-size: 16pt; } }
+    font-size: 12pt;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

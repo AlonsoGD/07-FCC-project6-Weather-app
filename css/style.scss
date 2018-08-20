@@ -1,4 +1,4 @@
-$fontSize: 40pt;
+$fontSize: 20pt;
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -8,26 +8,12 @@ body {
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
     background-size: cover !important;
-    color: white;
+    color: rgb(0, 0, 0);
     padding-bottom: 75px;
-}
-
-header {
-    font-family: 'Rammetto One', cursive;
-    font-size: $fontSize * 1.4;
-    margin-top: 35px;
-    padding-top: 35px;
-    padding-bottom: 20px;
-    text-shadow: 5px 5px 5px rgb(0, 0, 0);
-}
-
-main {
-    padding-bottom: 10px;
 }
 
 footer {
     padding: 10px;
-    background-color: #efefef;
     font-size: 12pt;
 
     .footerlinks {
@@ -43,93 +29,10 @@ footer {
     border-radius: 10px;
 }
 
-.reference {
-    font-size: $fontSize * 0.25;
-    margin-top: 10px;
-}
-
-.weather-image {
-    display: block;
-    margin: 0px 0px 0px 250px;
-}
-
-.temp-square {
-    display: block;
-    background: rgba(0, 0, 0, 0.63);
-    border-radius: 20px;
-    border: 3px solid white;
-    margin-top: 55px;
-    margin-right: 150px;
-    margin-left: 50px;
-    padding: 10px 30px;
-    transition:all 0.3s ease;
-    
-    .temperature {
-        text-align: center;   
-    }
-
-    .weather-text {
-        font-size: $fontSize * 0.5;
-        border-top: 3px solid #000000;
-    }
-}
-
-.temp-square:hover
-{
-    background:#11a0ff;
-}
-
-.weather-location {
-    padding: 50px 20px;
-    color: black;
-}
-
-.clickinfo {
-    margin-right: 150px;
-    margin-left: 50px;
-    padding: 10px 30px;
-    font-size: $fontSize * 0.35;
-    color: black;
-}
 
 // Mobile layout
 @media (max-width: 992px) {
     body {
         font-size: $fontSize * 0.60;
-    }
-
-    header {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-size: $fontSize * 0.70;
-    }
-
-    .temp-square {
-        padding: 10px 20px;
-        margin: 10px 50px;
-    }
-
-    .temperature {
-        text-align: center;
-    }
-
-    .weather-image {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .weather-location {
-        padding: 10px 20px;
-    }
-
-    .clickinfo {
-        margin-right: 10px;
-        margin-left: 10px;;
-    }
-
-    #weather-text-id {
-        font-size: $fontSize * 0.4;
     }
 }

@@ -9,9 +9,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- jQuery -->
     <script rel="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Fonts -->
@@ -21,30 +18,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="container text-center">
-    <div class="squareback text-center">
-        <header>Weather App</header>
+<body>
+    <div class="squareback">
         <main>
-            <div class="row">
-                <div class="col-md-6">
-                    <img class="img-responsive weather-image" id="weatherIcon" src="" alt="Weather representation icon">
-                </div>
-                <div class="col-md-6">
-                    <div id="temp-squareId" class="temp-square">
-                        <div class="temperature"><span id="temp-id"></span>
-                            <div class="weather-text">
-                                <span id="weather-text-id"></span>
-                            </div>
+            <div>
+                <img class="weather-image" id="weatherIcon" src="" alt="Weather representation icon">
+            </div>
+            <div>
+                <div id="temp-squareId" class="temp-square">
+                    <div class="temperature"><span id="temp-id"></span>
+                        <div class="weather-text">
+                            <span id="weather-text-id"></span>
                         </div>
                     </div>
-                    <div class="clickinfo">Click to switch temperature to Celsius or Fahrenheit</div>
                 </div>
+                <div class="clickinfo">Click to switch temperature to Celsius or Fahrenheit</div>
             </div>
-            <div class="row weather-location" id="weatherLocation"></div>
+            <div class="weather-location" id="weatherLocation"></div>
         </main>
     </div>
     <div class="reference">Icons made by: <a href="https://d3stroy.deviantart.com/">d3stroy.devianart</a></div>
-    <footer class="container-fluid text-right navbar navbar-fixed-bottom">
+
+
+
+    <footer class="">
         <a class="footerlinks" target="_blank" href="mailito:dani.alonso.garcia@gmail.com" data-toggle="tooltip" data-placement="top" title="dani.alonso.garcia@gmail.com"> <i class="fa fa-envelope fa-2x iconStyle" aria-hidden="true"></i></a>
         <a class="footerlinks" target="_blank" href="https://github.com/AlonsoGD/07-FCC-project6-Weather-app" data-toggle="tooltip" data-placement="top" title="GitHub"> <i class="fa fa-github fa-2x iconStyle" aria-hidden="true"></i></a>
     </footer>

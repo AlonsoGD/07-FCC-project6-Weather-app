@@ -23,14 +23,13 @@ $fontSize: 20pt;
     background-attachment: fixed !important;
     background-size: cover !important;
     color: rgb(0, 0, 0);
-    padding-bottom: 75px;
 }
 
 .currentw {
     background: rgba(169, 209, 241, 0.7);
     border-radius: 5px;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
-    margin: 75px 20px;
+    margin: 40px 20px;
     padding: 30px 20px;
 
     .currentw__title {
@@ -55,23 +54,25 @@ $fontSize: 20pt;
     border: 1px rgba(169, 209, 241, 0.6) solid;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
     
+    
     .information__tablerow {
         border-bottom: 2px rgba(169, 209, 241, 0.6) solid;
-        padding: 10px;
+        height: 80px;
+        margin: 20px 0px 0px 0px;
     }
-    
+      
     .information__icon {
-        display: inline-block;
+        padding: 30px 20px 10px 50px;
         font-size: 35pt;
     }
 
     .information__data {
-        display: inline-block;
+        width: 100%;
+        text-align: center;
     }
 
     .information_minmax {
         font-size: $fontSize * 0.5;
-        margin: 5px 5px 10px 5px;
     }
 }
 footer {

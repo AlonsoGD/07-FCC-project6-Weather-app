@@ -10,7 +10,7 @@
     <!-- jQuery -->
     <script rel="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One" rel="stylesheet">   
     <link href="https://fonts.googleapis.com/css?family=Archivo" rel="stylesheet">
@@ -19,32 +19,49 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <main class="squareback">
-        <div class="col1">
-            <div>
-                <img class="weather-image" id="weatherIcon" src="" alt="Weather representation icon">
-            </div>
-            <div>
-                <div id="temp-squareId" class="temp-square">
-                    <div class="temperature"><span id="temp-id"></span>
-                        <div class="weather-text">
-                            <span id="weather-text-id"></span>
+<body class="blayout">
+    <main>
+        <div>
+            <div class="currentw">
+                <div class="currentw__title" id="weatherLocation"></div>
+                <img class="img--responsive" id="weatherIcon" src="" alt="Weather representation icon">
+                <div class="currentw__wdescription"><span id="weather-text-id"></span></div>
+                <div class="information">
+                    <div class="information__tablerow">
+                        <div class="information__icon"><i class="fas fa-thermometer-three-quarters"></i></div>
+                        <div class="information__data" id="temp-squareId"><span id="temp-id"></span></div>
+                    </div>
+                    <div class="information__tablerow">
+                        <div class="information__icon">
+                            <div class="information_minmax"><span style="color: blue;">MIN</span> / <span style="color:red">MAX</span></div>
+                            <i class="fas fa-thermometer-three-quarters"></i>
                         </div>
+                        <div class="information__data" id="temp-squareId"><span id="temp-id"></span></div>
+                    </div>
+                    <div class="information__tablerow">
+                        <div class="information__icon">Icon</div>
+                        <div class="information__data" id="temp-squareId"><span id="temp-id"></span></div>
+                    </div>
+                    <div class="information__tablerow">
+                        <div class="information__icon">Icon</div>
+                        <div class="information__data" id="temp-squareId"><span id="temp-id"></span></div>
                     </div>
                 </div>
-                <div class="clickinfo">Click to switch temperature to Celsius or Fahrenheit</div>
             </div>
-            <div class="weather-location" id="weatherLocation"></div>
+
+            
+            <div class="forecastw">
+
+            </div>
+            
+        
         </div> 
     </main>
-    <div class="reference">Icons made by: <a href="https://d3stroy.deviantart.com/">d3stroy.devianart</a></div>
 
-
-
-    <footer class="">
-        <a class="footerlinks" target="_blank" href="mailito:dani.alonso.garcia@gmail.com" data-toggle="tooltip" data-placement="top" title="dani.alonso.garcia@gmail.com"> <i class="fa fa-envelope fa-2x iconStyle" aria-hidden="true"></i></a>
-        <a class="footerlinks" target="_blank" href="https://github.com/AlonsoGD/07-FCC-project6-Weather-app" data-toggle="tooltip" data-placement="top" title="GitHub"> <i class="fa fa-github fa-2x iconStyle" aria-hidden="true"></i></a>
-    </footer>
+    <!-- <footer>
+        <div>Icons made by: <a href="https://d3stroy.deviantart.com/">d3stroy.devianart</a></div>
+        <a target="_blank" href="mailito:dani.alonso.garcia@gmail.com" data-toggle="tooltip" data-placement="top" title="dani.alonso.garcia@gmail.com"> <i class="fa fa-envelope fa-2x iconStyle" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://github.com/AlonsoGD/07-FCC-project6-Weather-app" data-toggle="tooltip" data-placement="top" title="GitHub"> <i class="fa fa-github fa-2x iconStyle" aria-hidden="true"></i></a>
+    </footer> -->
 </body>
 </html>

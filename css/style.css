@@ -1,7 +1,19 @@
-body {
+.img--responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blayout {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 100%;
+  justify-content: space-evenly;
+  align-content: center;
   font-family: "Archivo", sans-serif;
   font-size: 20pt;
-  background: #007052;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
@@ -10,25 +22,62 @@ body {
   padding-bottom: 75px;
 }
 
+.currentw {
+  background: rgba(169, 209, 241, 0.7);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  margin: 75px 20px;
+  padding: 30px 20px;
+}
+.currentw .currentw__title {
+  text-transform: uppercase;
+  font-size: 30pt;
+  text-align: center;
+  font-weight: bold;
+}
+.currentw .currentw__wdescription {
+  text-align: center;
+}
+
+.information {
+  text-align: center;
+  margin: 20px 10%;
+  background: #D8ECFC;
+  border-radius: 5px;
+  border: 1px rgba(169, 209, 241, 0.6) solid;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.information .information__tablerow {
+  border-bottom: 2px rgba(169, 209, 241, 0.6) solid;
+  padding: 10px;
+}
+.information .information__icon {
+  display: inline-block;
+  font-size: 35pt;
+}
+.information .information__data {
+  display: inline-block;
+}
+.information .information_minmax {
+  font-size: 10pt;
+  margin: 5px 5px 10px 5px;
+}
+
 footer {
-  padding: 10px;
   font-size: 12pt;
 }
-footer .footerlinks {
-  padding: 10px;
+footer a {
   color: black;
-  font-size: 12pt;
 }
 
-.squareback {
-  background: rgba(255, 255, 255, 0.637);
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
-@media (max-width: 992px) {
-  body {
+@media (max-width: 600px) {
+  .blayout {
     font-size: 12pt;
+    display: block;
+  }
+
+  .currentw__title {
+    font-size: 16pt !important;
   }
 }
 

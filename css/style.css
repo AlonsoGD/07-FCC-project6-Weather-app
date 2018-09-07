@@ -8,9 +8,8 @@
 
 .blayout {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
-  justify-content: space-evenly;
   align-content: center;
   font-family: "Archivo", sans-serif;
   font-size: 20pt;
@@ -21,20 +20,20 @@
   color: black;
 }
 
-.currentw {
+.weatherbox {
   background: rgba(169, 209, 241, 0.7);
   border-radius: 5px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
   margin: 40px 20px;
   padding: 30px 20px;
 }
-.currentw .currentw__title {
+.weatherbox .weatherbox__title {
   text-transform: uppercase;
   font-size: 30pt;
   text-align: center;
   font-weight: bold;
 }
-.currentw .currentw__wdescription {
+.weatherbox .weatherbox__wdescription {
   text-align: center;
 }
 
@@ -52,15 +51,31 @@
   margin: 20px 0px 0px 0px;
 }
 .information .information__icon {
-  padding: 30px 20px 10px 50px;
+  padding: 30px 20px 10px 20px;
   font-size: 35pt;
+  border-right: 2px solid rgba(169, 209, 241, 0.7);
+  border-bottom: 2px solid rgba(169, 209, 241, 0.7);
+}
+.information .information__icon--no_border_bottom {
+  border-bottom: none;
+}
+.information .information__icon--no_background {
+  background: rgba(169, 209, 241, 0.7);
 }
 .information .information__data {
   width: 100%;
   text-align: center;
+  border-bottom: 2px solid rgba(169, 209, 241, 0.7);
+}
+.information .information__data--no_width {
+  width: unset;
+}
+.information .information__data--no_border_bottom {
+  border-bottom: none;
 }
 .information .information_minmax {
   font-size: 10pt;
+  width: 70px;
 }
 
 footer {
@@ -70,7 +85,7 @@ footer a {
   color: black;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .blayout {
     font-size: 12pt;
     display: block;

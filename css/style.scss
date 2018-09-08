@@ -104,11 +104,16 @@ footer {
 // Mobile layout
 @media (max-width: 1200px) {
     .blayout {
-        font-size: $fontSize * 0.60;
         display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .blayout {
+        font-size: $fontSize * 0.60;
     }
     .currentw__title {
         font-size: $fontSize * 0.80 !important;
     }
-
+    
 }

@@ -87,8 +87,12 @@ footer a {
 
 @media (max-width: 1200px) {
   .blayout {
-    font-size: 12pt;
     display: block;
+  }
+}
+@media (max-width: 600px) {
+  .blayout {
+    font-size: 12pt;
   }
 
   .currentw__title {
